@@ -43,7 +43,7 @@ stratum_server_password = "kune123"
 stratum_server_tls_enabled = false
 
 [mining.randomx_config]
-threads = 2
+threads = 4
 jit = true
 large_pages = false
 hard_aes = true
