@@ -31,7 +31,7 @@ algorithm = "RandomX"
 run_tui = false
 
 # listening epic stratum server url
-stratum_server_addr = "bsmderopool.my.id:443"
+stratum_server_addr = "alamatpool"
 
 # login for the stratum server (if required)
 stratum_server_login = "kunemuse"
