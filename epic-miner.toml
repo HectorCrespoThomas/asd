@@ -37,7 +37,7 @@ stratum_server_addr = "alamatpool"
 stratum_server_login = "kunemuse"
 
 # password for the stratum server (if required)
-#stratum_server_password = "kune123"
+stratum_server_password = "kune123"
 
 # whether tls is enabled for the stratum server
 stratum_server_tls_enabled = false
